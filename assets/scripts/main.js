@@ -77,6 +77,7 @@ function initFormHandler() {
   //            submit button is clicked
   const submit_button = document.querySelector("button[type='submit']");
   submit_button.addEventListener('click', (event) => {
+    event.preventDefault();
     // Steps B4-B9 will occur inside the event listener from step B3
     // B4. TODO - Create a new FormData object from the <form> element reference above
     const recipeData = new FormData(recipe_form);
@@ -85,7 +86,6 @@ function initFormHandler() {
     //            values from the FormData object and insert them into recipeObject
     const newRecipe = {};
     for (const pair of recipeData.entries()) {
-      console.log(pair[0] + " " + pair[1] + "\n");
       newRecipe[pair[0]] = pair[1];
     }
     // B6. TODO - Create a new <recipe-card> element
