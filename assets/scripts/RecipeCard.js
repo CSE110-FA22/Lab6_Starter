@@ -130,7 +130,7 @@ class RecipeCard extends HTMLElement {
     //           cardTemplate.html and the data passed in (You should only have one <article>,
     //           do not nest an <article> inside another <article>). You should use Template
     //           literals (tempalte strings) and element.innerHTML for this.
-    shadowArt.innerHTML = `
+    document.getElementsByName('shadowArt').innerHTML = `
     <img src="https://link-to-article.com/recipe-thumbnail.jpg"
     alt="Recipe Title">
     <p class="title">
