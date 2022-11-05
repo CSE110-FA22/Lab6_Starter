@@ -71,6 +71,8 @@ function initFormHandler() {
   let formEl = document.querySelector('form'); // console.log(formEl);
   // B3. TODO - Add an event listener for the 'submit' event, which fires when the
   //            submit button is clicked
+  let submit = document.getElementsByTagName('button')[0]; // console.log(submit);
+  submit.addEventListener('click', submitFunc);
   // Steps B4-B9 will occur inside the event listener from step B3
   // B4. TODO - Create a new FormData object from the <form> element reference above
   // B5. TODO - Create an empty object (I'll refer to this object as recipeObject to
