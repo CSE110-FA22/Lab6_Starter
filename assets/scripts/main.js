@@ -71,19 +71,23 @@ function initFormHandler() {
   let formEl = document.querySelector('form'); // console.log(formEl);
   // B3. TODO - Add an event listener for the 'submit' event, which fires when the
   //            submit button is clicked
-  let submit = document.getElementsByTagName('button')[0]; // console.log(submit);
+  let submit = document.getElementsByTagName('button')[0]; // console.log(typeof submit);
   submit.addEventListener('click', submitFunc);
   // Steps B4-B9 will occur inside the event listener from step B3
-  // B4. TODO - Create a new FormData object from the <form> element reference above
-  // B5. TODO - Create an empty object (I'll refer to this object as recipeObject to
-  //            make this easier to read), and then extract the keys and corresponding
-  //            values from the FormData object and insert them into recipeObject
-  // B6. TODO - Create a new <recipe-card> element
-  // B7. TODO - Add the recipeObject data to <recipe-card> using element.data
-  // B8. TODO - Append this new <recipe-card> to <main>
-  // B9. TODO - Get the recipes array from localStorage, add this new recipe to it, and
-  //            then save the recipes array back to localStorage
+  function submitFunc() {
+    // B4. TODO - Create a new FormData object from the <form> element reference above
+    let FormData = formEl;
+    // B5. TODO - Create an empty object (I'll refer to this object as recipeObject to
+    //            make this easier to read), and then extract the keys and corresponding
+    //            values from the FormData object and insert them into recipeObject
+    // B6. TODO - Create a new <recipe-card> element
+    // B7. TODO - Add the recipeObject data to <recipe-card> using element.data
+    // B8. TODO - Append this new <recipe-card> to <main>
+    // B9. TODO - Get the recipes array from localStorage, add this new recipe to it, and
+    //            then save the recipes array back to localStorage
 
+  }
+  
   // B10. TODO - Get a reference to the "Clear Local Storage" button
   // B11. TODO - Add a click event listener to clear local storage button
   
