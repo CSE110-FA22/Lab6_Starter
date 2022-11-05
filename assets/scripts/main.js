@@ -43,7 +43,6 @@ function addRecipesToDocument(recipes) {
   //            Append each element to <main>
   for (let i = 0; i < recipes.length; i++) {
     let recipeEl = document.createElement('recipe-card');
-    console.log(recipes[i]);
     recipeEl.data = recipes[i];
     mainEl.append(recipeEl);
   }
@@ -59,6 +58,7 @@ function saveRecipesToStorage(recipes) {
   // B1. TODO - Complete the functionality as described in this function
   //            header. It is possible in only a single line, but should
   //            be no more than a few lines.
+  localStorage.getItem('recipes') = recipes.toString();
 }
 
 /**
@@ -68,10 +68,9 @@ function saveRecipesToStorage(recipes) {
 function initFormHandler() {
 
   // B2. TODO - Get a reference to the <form> element
-  
+  let formEl = document.querySelector('form'); // console.log(formEl);
   // B3. TODO - Add an event listener for the 'submit' event, which fires when the
   //            submit button is clicked
-
   // Steps B4-B9 will occur inside the event listener from step B3
   // B4. TODO - Create a new FormData object from the <form> element reference above
   // B5. TODO - Create an empty object (I'll refer to this object as recipeObject to
