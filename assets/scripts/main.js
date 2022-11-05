@@ -93,14 +93,21 @@ function initFormHandler() {
     mainEl.append(recipeCard);
     // B9. TODO - Get the recipes array from localStorage, add this new recipe to it, and
     //            then save the recipes array back to localStorage
-
+    let recipes = getRecipesFromStorage(); // console.log(typeof recipes);
+    recipes.append(recipeObject);
+    addRecipesToDocument(recipes);
   }
   
   // B10. TODO - Get a reference to the "Clear Local Storage" button
+  let clear = document.getElementsByTagName('button')[1]; // console.log(typeof clear);
   // B11. TODO - Add a click event listener to clear local storage button
-  
+  clear.addEventListener('click', clearFunc);
   // Steps B12 & B13 will occur inside the event listener from step B11
-  // B12. TODO - Clear the local storage
-  // B13. TODO - Delete the contents of <main>
+  function clearFunc() {
+    // B12. TODO - Clear the local storage
+    localStorage.clear();
+    // B13. TODO - Delete the contents of <main>
+  }
+
 
 }
