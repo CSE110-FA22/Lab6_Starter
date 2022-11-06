@@ -35,16 +35,15 @@ function getRecipesFromStorage() {
  * @param {Array<Object>} recipes An array of recipes
  */
 function addRecipesToDocument(recipes) {
-  console.log(recipes);
   // A10. TODO - Get a reference to the <main> element
-    let mainEl = document.getElementsByTagName('main')[0];
+  let mainEl = document.getElementsByTagName('main')[0];
   // A11. TODO - Loop through each of the recipes in the passed in array,
   //            create a <recipe-card> element for each one, and populate
   //            each <recipe-card> with that recipe data using element.data = ...
   //            Append each element to <main>
-  for (recipe in recipes) {
+  for (let i=0; i<recipes.length; i++) {
     let recipeEl = document.createElement('recipe-card');
-    recipeEl.data = recipe; console.log(recipe);
+    recipeEl.data = recipes[i]; 
     mainEl.append(recipeEl);
   }
 }
@@ -108,7 +107,8 @@ function initFormHandler() {
     // B12. TODO - Clear the local storage
     localStorage.clear();
     // B13. TODO - Delete the contents of <main>
-    document.getElementsByTagName('main')[0] = '';
+    let mainEl = document.getElementsByTagName('main')[0];
+    mainEl.remove();
   }
 
 
