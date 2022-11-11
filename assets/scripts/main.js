@@ -13,6 +13,7 @@ function init() {
   initFormHandler();
 }
 
+
 /**
  * Reads 'recipes' from localStorage and returns an array of
  * all of the recipes found (parsed, not in string form). If
@@ -24,7 +25,16 @@ function getRecipesFromStorage() {
   // A9. TODO - Complete the functionality as described in this function
   //           header. It is possible in only a single line, but should
   //           be no more than a few lines.
+  let storedRecipe = window.localStorage.getItem("recipes"); // storedRecipe is a JSON string
+  let recipeObject = JSON.parse(storedRecipe); // JSON.parse converts storedRecipe into a JS Object
+  if (recipeObject == null) {
+    return [];
+  }
+  else {
+    return recipeObject;
+  }
 }
+
 
 /**
  * Takes in an array of recipes and for each recipe creates a
@@ -35,11 +45,18 @@ function getRecipesFromStorage() {
  */
 function addRecipesToDocument(recipes) {
   // A10. TODO - Get a reference to the <main> element
+  let main = document.querySelector("main");
   // A11. TODO - Loop through each of the recipes in the passed in array,
   //            create a <recipe-card> element for each one, and populate
   //            each <recipe-card> with that recipe data using element.data = ...
   //            Append each element to <main>
+  for (let i = 0; i < recipes.length; i++) {
+    let recipeCard = document.createElement("recipe-card");
+    recipeCard.data = recipes[i];
+    main.appendChild(recipeCard);
+  }
 }
+
 
 /**
  * Takes in an array of recipes, converts it to a string, and then
@@ -52,6 +69,7 @@ function saveRecipesToStorage(recipes) {
   //            header. It is possible in only a single line, but should
   //            be no more than a few lines.
 }
+
 
 /**
  * Adds the necesarry event handlers to <form> and the clear storage
